@@ -23,34 +23,30 @@ find out if an array contains a value using includes
 add all the values from one array into another array using …
 	firstArray.push(…secondArray) // all the values from secondArray will be added to firstArray */
 
-
-var recipes = [
-    {
-        name: 'roast chicken',
-        ingredients: ['chicken', 'garlic', 'lemon', 'butter', 'pepper']
+var recipes = [{
+        name: "roast chicken",
+        ingredients: ["chicken", "garlic", "lemon", "butter", "pepper"],
     },
     {
-        name: 'pasta sauce',
-        ingredients: ['olive oil', 'tomatoes', 'garlic', 'onion', 'chilli flakes']
+        name: "pasta sauce",
+        ingredients: ["olive oil", "tomatoes", "garlic", "onion", "chilli flakes"],
     },
     {
-        name: 'homemade pasta',
-        ingredients: ['flour', 'eggs', 'olive oil', 'salt']
-    }
+        name: "homemade pasta",
+        ingredients: ["flour", "eggs", "olive oil", "salt"],
+    },
 ];
 
 function makeShoppingList(list) {
-    var buyIngredients = []
-if (list.includes('roast chicken')) {
-    buyIngredients.push(...recipes[0].ingredients)
-}
-if (list.includes('pasta sauce')) {
-    buyIngredients.push(...recipes[1].ingredients)
-}
-if (list.includes('homemade pasta')) {
-    buyIngredients.push(...recipes[2].ingredients)
-}
-console.log(buyIngredients.toString());
+    var buyIngredients = [];
+    for (var j = 0; j < list.length; j++) {
+        for (var i = 0; i < recipes.length; i++) {
+            if (list[j].includes(recipes[i].name)) {
+                buyIngredients.push(...recipes[i].ingredients);
+            }
+        }
+    }
+    console.log(buyIngredients);
 }
 
-makeShoppingList(['homemade pasta', 'pasta sauce']);
+makeShoppingList(["homemade pasta", "pasta sauce"]);
