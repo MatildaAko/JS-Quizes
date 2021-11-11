@@ -46,7 +46,8 @@ function makeShoppingList(list) {
             }
         }
     }
-    console.log(buyIngredients);
+    var singleIngredientList = [...new Set(buyIngredients)];
+    console.log(singleIngredientList);
 }
 
 makeShoppingList(["homemade pasta", "pasta sauce"]);
