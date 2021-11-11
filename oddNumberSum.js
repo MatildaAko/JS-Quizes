@@ -7,13 +7,11 @@ console.log(oddNumberSum([1,3,5,7])); // 1 + 3 + 5 + 7 = 16, so should output 16
 
 function oddNumberSum(arr) {
     var sum = 0;
-    for(var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
         if (arr[i] % 2 !== 0) {
             sum += arr[i];
-        } else {
-            sum += 0;
         }
-    } return sum;
+    }
+    return sum;
 }
-
-console.log(oddNumberSum([1,3,5,7]));
+console.log(oddNumberSum([1, 3, 5, 7]));
